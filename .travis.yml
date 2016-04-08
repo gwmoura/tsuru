@@ -1,5 +1,6 @@
 language: go
 sudo: required
+install: true
 go:
   - 1.5.3
   - 1.6
@@ -13,7 +14,6 @@ addons:
     packages:
       - rsyslog
       - xmlsec1
-install: true
 before_script:
   - rsyslogd &
   - sleep 1
@@ -32,6 +32,7 @@ notifications:
 services:
   - mongodb
   - redis
+  - docker
 matrix:
   allow_failures:
     - go: tip
